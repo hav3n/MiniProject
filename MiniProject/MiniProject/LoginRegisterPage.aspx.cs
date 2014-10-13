@@ -13,5 +13,15 @@ namespace MiniProject
         {
 
         }
+
+        protected void LoginBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void RegisterBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
