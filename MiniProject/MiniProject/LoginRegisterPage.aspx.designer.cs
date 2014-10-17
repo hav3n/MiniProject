@@ -13,22 +13,22 @@ namespace MiniProject {
     public partial class LoginRegisterPage {
         
         /// <summary>
-        /// userTB control.
+        /// userTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userTB;
+        protected global::System.Web.UI.WebControls.TextBox userTextBox;
         
         /// <summary>
-        /// passTB control.
+        /// passTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox passTB;
+        protected global::System.Web.UI.WebControls.TextBox passTextBox;
         
         /// <summary>
         /// LoginBtn control.

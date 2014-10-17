@@ -7,14 +7,15 @@
     <link href="Style.css" rel="stylesheet" type="text/css" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,800' rel='stylesheet' type='text/css' />
+    <link href="StickyFooter.css" rel="stylesheet" type="html/sandboxed" />
     <title>Price Comparison</title>
 
     <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <div class="header">
-        <div class="headerTitle">PRICE COMPARISON </div>
+    <div class="page-header">
+        <h1 class="text-center">Price Comparison Website</h1>
     </div>
 
     <form id="form1" runat="server">
@@ -25,11 +26,8 @@
     </form>
 
     <div class="footer">
-        <div class="footerTitle">
-            Made by: Nikhil Peter Raj & Ankit Aggarwal
-            <br />
-            <a href="abc@abc.com">Contact Us:</a>
-        </div>
+        <h6>Made by: Nikhil Peter Raj & Ankit Aggarwal</h6>        
+        <a href="abc@abc.com">Contact Us:</a>
     </div>
 
 </body>
