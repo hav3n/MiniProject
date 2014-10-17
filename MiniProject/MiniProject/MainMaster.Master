@@ -17,15 +17,13 @@
         <h1 class="text-center">Price Comparison Website</h1>
     </div>
 
-    <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
-    </form>
+    <div>
+        <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
 
     <div class="footer">
-        <h6>Made by: Nikhil Peter Raj & Ankit Aggarwal</h6>        
+        <h6>Made by: Nikhil Peter Raj & Ankit Aggarwal</h6>
         <a href="abc@abc.com">Contact Us:</a>
     </div>
 
