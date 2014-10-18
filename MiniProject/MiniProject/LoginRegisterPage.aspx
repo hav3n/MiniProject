@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="LoginRegisterContent" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <form id="loginForm" role="form" runat="server">
-        <div class="login-container">
+        <div class="LoginContent">
             <div class="form-group">
                 <label for="userTextBox">Enter Email:</label>
                 <asp:TextBox ID="userTextBox" CssClass="form-control" TextMode="Email" runat="server"></asp:TextBox>
