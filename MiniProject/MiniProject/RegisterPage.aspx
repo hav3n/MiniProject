@@ -7,7 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <h2 class="text-center">Enter Registration Details</h2>
 
-    <div class="formBody">
+    <div class="form-body">
         <form id="registerForm" role="form" runat="server">
 
             <div class="form-group">
