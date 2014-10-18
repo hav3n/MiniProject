@@ -6,8 +6,9 @@
 <head runat="server">
     <link href="Style.css" rel="stylesheet" type="text/css" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="StickyFooter.css" rel="stylesheet" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,800' rel='stylesheet' type='text/css' />
-    <link href="StickyFooter.css" rel="stylesheet" type="html/sandboxed" />
+    
 
     <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
     </asp:ContentPlaceHolder>
