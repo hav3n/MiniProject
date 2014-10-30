@@ -13,21 +13,39 @@ namespace MiniProject {
     public partial class MainPage {
         
         /// <summary>
-        /// searchInput control.
+        /// search control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText searchInput;
+        protected global::System.Web.UI.HtmlControls.HtmlForm search;
         
         /// <summary>
-        /// searchButton control.
+        /// SearchText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton searchButton;
+        protected global::System.Web.UI.WebControls.TextBox SearchText;
+        
+        /// <summary>
+        /// searchbtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button searchbtn;
+        
+        /// <summary>
+        /// resultholder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel resultholder;
     }
 }
