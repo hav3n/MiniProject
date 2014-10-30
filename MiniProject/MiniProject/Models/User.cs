@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace MiniProject.Models
+namespace MiniProject
 {
     public class User
     {
-        int UserID { get; set; }
-        string Email { get; set; }
-        string Password { get; set; }
-        DateTime RegDate { get; set; }
+        public int UserID { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public DateTime RegDate { get; set; }
     }
 }

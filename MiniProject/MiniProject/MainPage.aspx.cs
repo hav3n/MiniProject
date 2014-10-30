@@ -11,7 +11,14 @@ namespace MiniProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["UserID"] == null)
+            {
+                Response.Redirect("LoginRegisterPage.aspx");
+            }
+            else
+            {
+                Response.Write("logged in " + Session["UserID"]);
+            }
         }
     }
 }

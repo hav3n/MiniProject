@@ -49,12 +49,12 @@ namespace MiniProject {
         protected global::System.Web.UI.WebControls.TextBox reEnterPassTextBox;
         
         /// <summary>
-        /// TextBox1 control.
+        /// Register control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button TextBox1;
+        protected global::System.Web.UI.WebControls.Button Register;
     }
 }

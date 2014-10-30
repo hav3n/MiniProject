@@ -26,7 +26,7 @@
             </div>
 
             <div class="form-group">
-                <asp:Button ID="TextBox1" runat="server" CssClass="btn btn-default" Text="Register"></asp:Button>
+                <asp:Button ID="Register" runat="server" CssClass="btn btn-default" Text="Register" OnClick="Register_Click"></asp:Button>
             </div>
         </form>
 
