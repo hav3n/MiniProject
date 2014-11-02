@@ -8,14 +8,16 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="StickyFooter.css" rel="stylesheet" type="text/css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,800' rel='stylesheet' type='text/css' />
-    
+
 
     <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <div class="page-header">
-        <h1 class="text-center"><a href="MainPage.aspx" style="text-decoration: none">Price Comparison Website</a></h1>
+        <h1 class="text-center">
+            <asp:ContentPlaceHolder ID="PageHeaderPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+        </h1>
     </div>
     <div>
         <asp:ContentPlaceHolder ID="BodyContentPlaceHolder" runat="server">
@@ -23,8 +25,9 @@
     </div>
 
     <div class="footer">
-        <h6>Made by: Nikhil Peter Raj & Ankit Aggarwal</h6>
-        <a href="abc@abc.com">Contact Us:</a>
+        <p class="text-muted">
+            &nbsp;Made by: <a href="nikhilpeter93@gmail.com">Nikhil Peter Raj</a> & <a href="ankit@ankit.im">Ankit Aggarwal</a>
+        </p>
     </div>
 
 </body>
