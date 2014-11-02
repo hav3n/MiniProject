@@ -10,6 +10,6 @@ namespace MiniProject
         public int UserID { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public DateTime RegDate { get; set; }
+        public string Name { get; set; }
     }
 }
