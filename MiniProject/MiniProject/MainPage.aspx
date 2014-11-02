@@ -9,6 +9,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="BodyContentPlaceHolder" runat="server">
     <br />
+      <div id="LoginAlert" class="alert alert-danger alert-dismissible container" role="alert" runat="server">
+            <asp:Label ID="alertText" runat="server" Font-Bold="true"></asp:Label>
+        </div>
     <form id="search" role="form" runat="server">
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
@@ -23,6 +26,7 @@
     </form>
     <br />
     <br />
+      
     <asp:Panel ID="resultholder" CssClass="container" runat="server">
     </asp:Panel>
 

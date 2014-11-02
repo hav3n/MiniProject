@@ -11,8 +11,6 @@ using System.Web.UI.WebControls;
 
 namespace MiniProject
 {
-
-
     public partial class LoginRegisterPage : System.Web.UI.Page
     {
         string conString = WebConfigurationManager.ConnectionStrings["Db"].ConnectionString;
@@ -49,6 +47,8 @@ namespace MiniProject
                     rows = dt.Rows.Count;
                 }
 
+
+
                 if (rows == 1)
                 {
 
@@ -67,7 +67,9 @@ namespace MiniProject
                             Response.Cookies.Add(cookie);
                         }
                     }
-
+                    reader = cmd.ExecuteReader();
+                    reader.Read();
+                    Session["Name"] = reader["Name"];
                     Server.Transfer("MainPage.aspx");
                 }
                 else

@@ -17,14 +17,16 @@ namespace MiniProject
         public List<SearchResult> results;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Id"] == null)
+            if (Session["Name"] == null)
             {
-               // Response.Redirect("LoginRegisterPage.aspx");
+                Response.Redirect("LoginRegisterPage.aspx");
             }
             else
             {
-                Response.Write("logged in " + Session["UserID"]);
+               // Response.Write("logged in " + Session["UserID"]);
             }
+
+            alertText.Text = "Welcome, " + Session["Name"];
         }
 
         protected void searchbtn_Click(object sender, EventArgs e)
