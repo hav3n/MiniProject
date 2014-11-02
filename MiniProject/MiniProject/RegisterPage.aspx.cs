@@ -16,24 +16,38 @@ namespace MiniProject
 
         }
 
-    
+
 
         protected void Register_Click(object sender, EventArgs e)
         {
             User user = new User();
             user.Email = emailTextBox.Text;
             user.Password = passTextBox.Text;
-            user.RegDate = DateTime.Today;
+            user.Name = nameTextBox.Text;
 
 
             SqlConnection con = new SqlConnection(conString);
-            string query = "Insert into users (Email, Password, RegDate) Values (";
-            query += "'" + user.Email + "','" + user.Password + "',CURRENT_TIMESTAMP)";
+            string query = "Insert into Users (Name,Email,Password) Values (@Name,@Email,@Password)";
             SqlCommand cmd = new SqlCommand(query, con);
-            con.Open();
-            int rows = cmd.ExecuteNonQuery();
-            Response.Write("Please login now");
-            con.Close();
+            cmd.Parameters.AddWithValue("@Name", user.Name);
+            cmd.Parameters.AddWithValue("@Email", user.Email);
+            cmd.Parameters.AddWithValue("@Password", user.Password);
+            try
+            {
+                con.Open();
+                int rows = cmd.ExecuteNonQuery();
+
+                if (rows >= 1)
+                    Server.Transfer("LoginRegisterPage.aspx");
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }
