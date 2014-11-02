@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -10,7 +11,7 @@ namespace MiniProject
 {
     public partial class RegisterPage : System.Web.UI.Page
     {
-        string conString = @"Data Source=(localdb)\v11.0;Initial Catalog=datastore;Integrated Security=True";
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -25,7 +26,7 @@ namespace MiniProject
             user.Password = passTextBox.Text;
             user.Name = nameTextBox.Text;
 
-
+            string conString = WebConfigurationManager.ConnectionStrings["Db"].ConnectionString;
             SqlConnection con = new SqlConnection(conString);
             string query = "Insert into Users (Name,Email,Password) Values (@Name,@Email,@Password)";
             SqlCommand cmd = new SqlCommand(query, con);
@@ -37,12 +38,12 @@ namespace MiniProject
                 con.Open();
                 int rows = cmd.ExecuteNonQuery();
 
-                if (rows >= 1)
-                    Server.Transfer("LoginRegisterPage.aspx");
+                Server.Transfer("LoginRegisterPage.aspx");
             }
             catch (Exception ex)
             {
-
+                RegisterAlert.Visible = true;
+                alertText.Text = "Could not insert into DB" + ex;
             }
             finally
             {

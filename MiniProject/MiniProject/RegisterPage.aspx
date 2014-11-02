@@ -64,8 +64,14 @@
                         ValidateEmptyText="true"></asp:CustomValidator>
                 </div>
 
-                <div class="form-group">
+                <div id="buttonform" class="form-group" runat="server">
                     <asp:Button ID="Register" runat="server" CssClass="btn btn-default" Text="Register" OnClick="Register_Click"></asp:Button>
+
+                    <div id="RegisterAlert" visible="false" class="alert alert-danger alert-dismissible" role="alert" runat="server">
+                        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <asp:Label ID="alertText" runat="server" Font-Bold="true"></asp:Label>
+                    </div>
+
                 </div>
             </div>
         </div>
