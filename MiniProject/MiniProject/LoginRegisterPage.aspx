@@ -14,13 +14,27 @@
     <form id="loginForm" role="form" runat="server">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                <div class="form-group">
+                <div class="form-group has-feedback">
                     <label for="userTextBox">Enter Email:</label>
                     <asp:TextBox ID="userTextBox" CssClass="form-control" TextMode="Email" runat="server"></asp:TextBox>
+                    <asp:CustomValidator ID="emailValidator"
+                        runat="server"
+                        ErrorMessage="Invalid Email"
+                        ControlToValidate="userTextBox"
+                        ValidateEmptyText="true"
+                        CssClass="text-danger"
+                        ClientValidationFunction="emailValidation" />
                 </div>
-                <div class="form-group">
-                    <label for="passTextBox">Email Password:</label>
+                <div class="form-group has-feedback">
+                    <label for="passTextBox">Enter Password:</label>
                     <asp:TextBox ID="passTextBox" CssClass="form-control" TextMode="Password" runat="server"></asp:TextBox>
+                    <asp:CustomValidator ID="passwordValidator"
+                        runat="server"
+                        ErrorMessage="Password must have min 7 characters and contain at least one uppercase & lowercase character and a number"
+                        ControlToValidate="passTextBox"
+                        ValidateEmptyText="true"
+                        CssClass="text-danger"
+                        ClientValidationFunction="passwordValidation" />
                 </div>
                 <div class="checkbox">
                     <label>

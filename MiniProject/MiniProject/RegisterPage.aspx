@@ -16,19 +16,52 @@
     <form id="registerForm" role="form" runat="server">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                <div class="form-group">
+
+                <div class="form-group has-feedback">
+                    <label for="nameTextBox">Name</label>
+                    <asp:TextBox ID="nameTextBox" runat="server" CssClass="form-control"></asp:TextBox>
+                    <asp:CustomValidator ID="nameValidator"
+                        runat="server"
+                        ControlToValidate="nameTextBox"
+                        ClientValidationFunction="nameValidation"
+                        CssClass="text-danger"
+                        ErrorMessage="Name cannot have special characters or numbers"></asp:CustomValidator>
+                </div>
+
+
+                <div class="form-group has-feedback">
                     <label for="emailTextBox">Email</label>
                     <asp:TextBox ID="emailTextBox" runat="server" CssClass="form-control" TextMode="Email"></asp:TextBox>
+                    <asp:CustomValidator ID="emailValidator"
+                        runat="server"
+                        ErrorMessage="Invalid Email"
+                        ControlToValidate="emailTextBox"
+                        ValidateEmptyText="true"
+                        CssClass="text-danger"
+                        ClientValidationFunction="emailValidation" />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group has-feedback">
                     <label for="passTextBox">Enter Password</label>
                     <asp:TextBox ID="passTextBox" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                    <asp:CustomValidator ID="passwordValidator"
+                        runat="server"
+                        ErrorMessage="Password must have min 7 characters and contain at least one uppercase & lowercase character and a number"
+                        ControlToValidate="passTextBox"
+                        ValidateEmptyText="true"
+                        CssClass="text-danger"
+                        ClientValidationFunction="passwordValidation" />
                 </div>
 
-                <div class="form-group">
+                <div class="form-group has-feedback">
                     <label for="reEnterPassTextBox">Re-Enter Password</label>
                     <asp:TextBox ID="reEnterPassTextBox" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                    <asp:CustomValidator ID="compareValidator" runat="server"
+                        ErrorMessage="Passwords must match"
+                        ControlToValidate="reEnterPassTextBox"
+                        ClientValidationFunction="compareValidation"
+                        CssClass="text-danger"
+                        ValidateEmptyText="true"></asp:CustomValidator>
                 </div>
 
                 <div class="form-group">

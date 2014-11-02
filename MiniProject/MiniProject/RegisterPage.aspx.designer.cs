@@ -22,6 +22,24 @@ namespace MiniProject {
         protected global::System.Web.UI.HtmlControls.HtmlForm registerForm;
         
         /// <summary>
+        /// nameTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nameTextBox;
+        
+        /// <summary>
+        /// nameValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator nameValidator;
+        
+        /// <summary>
         /// emailTextBox control.
         /// </summary>
         /// <remarks>
@@ -29,6 +47,15 @@ namespace MiniProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox emailTextBox;
+        
+        /// <summary>
+        /// emailValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator emailValidator;
         
         /// <summary>
         /// passTextBox control.
@@ -40,6 +67,15 @@ namespace MiniProject {
         protected global::System.Web.UI.WebControls.TextBox passTextBox;
         
         /// <summary>
+        /// passwordValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator passwordValidator;
+        
+        /// <summary>
         /// reEnterPassTextBox control.
         /// </summary>
         /// <remarks>
@@ -47,6 +83,15 @@ namespace MiniProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox reEnterPassTextBox;
+        
+        /// <summary>
+        /// compareValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator compareValidator;
         
         /// <summary>
         /// Register control.
