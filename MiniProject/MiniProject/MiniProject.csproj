@@ -72,6 +72,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <None Include="Properties\PublishProfiles\example4672 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\example4672 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="MainPage.aspx" />
     <Content Include="RegisterPage.aspx" />
