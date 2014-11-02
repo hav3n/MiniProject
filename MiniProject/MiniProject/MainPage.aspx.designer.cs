@@ -40,6 +40,15 @@ namespace MiniProject {
         protected global::System.Web.UI.HtmlControls.HtmlForm search;
         
         /// <summary>
+        /// catedropDown control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList catedropDown;
+        
+        /// <summary>
         /// SearchText control.
         /// </summary>
         /// <remarks>

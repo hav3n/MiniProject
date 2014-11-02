@@ -13,10 +13,16 @@
             <asp:Label ID="alertText" runat="server" Font-Bold="true"></asp:Label>
         </div>
     <form id="search" role="form" runat="server">
+
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
+                 <asp:DropDownList ID="catedropDown" runat="server" CssClass="form-control"></asp:DropDownList>
+                <br />
                 <div class="input-group">
                     <asp:TextBox ID="SearchText" runat="server" CssClass="form-control"></asp:TextBox>
+
+                   
+
                     <span class="input-group-btn">
                         <asp:Button CssClass="btn btn-default" Text="Search" ID="searchbtn" runat="server" OnClick="searchbtn_Click"></asp:Button>
                     </span>
