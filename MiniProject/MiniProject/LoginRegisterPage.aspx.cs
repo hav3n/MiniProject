@@ -20,7 +20,7 @@ namespace MiniProject
         {
             HttpCookie cookie = Response.Cookies["userData"];
 
-            if (cookie != null)
+            if (cookie != null && !this.IsPostBack)
             {
                 userTextBox.Text = cookie["Email"];
                 passTextBox.Text = cookie["Pass"];
@@ -37,11 +37,12 @@ namespace MiniProject
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Email", userTextBox.Text);
                 cmd.Parameters.AddWithValue("@Password", passTextBox.Text);
+
                 con.Open();
+                
                 SqlDataReader reader = cmd.ExecuteReader();
-
+              
                 int rows;
-
                 using (DataTable dt = new DataTable())
                 {
                     dt.Load(reader);
@@ -73,8 +74,8 @@ namespace MiniProject
                 {
                     LoginAlert.Visible = true;
 
-                    Label text = FindControl("alertText") as Label;
-                    text.Text = "Could not find User!";
+                   // Label text = FindControl("alertText") as Label;
+                    alertText.Text = "Could not find User!";
 
                 }
 
@@ -83,7 +84,7 @@ namespace MiniProject
             catch (Exception ex)
             {
                 LoginAlert.Visible = true;
-                alertText.Text = "Could not open DB connection!";
+                alertText.Text = "Could not open DB connection! "+ex;
             }
 
         }
