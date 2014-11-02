@@ -46,4 +46,9 @@
             </div>
         </div>
     </form>
+    <br />
+    <div class="container">
+        <asp:Label ID="LoginAlert" Visible="false" runat="server" CssClass="alert alert-danger col-lg-12 text-center" Text="Username not found!">        
+        </asp:Label>
+    </div>
 </asp:Content>
