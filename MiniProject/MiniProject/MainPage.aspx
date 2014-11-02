@@ -29,11 +29,26 @@
                 </div>
             </div>
         </div>
+        <br />
+        <asp:GridView ID="resultGrid" CssClass="table" runat="server" AutoGenerateColumns="false">
+            <Columns>
+                <asp:TemplateField HeaderText="Image">
+                    <ItemTemplate>
+                        <img src="<%# Eval("image") %>" class="img-thumbnail img-responsive center-block" alt="Image" style="min-height: 140px; height: auto; min-width: 140px; width: 140px" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:BoundField HeaderText="Stock" DataField="stock" />
+                <asp:BoundField HeaderText="Price(Rs.)" DataField="price" />
+                <asp:BoundField HeaderText="Offer" DataField="offer" />
+                <asp:TemplateField HeaderText="Store Link">
+                    <ItemTemplate>
+                        <a href="<%# Eval("url") %>"><%# Eval("website") %></a>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
     </form>
     <br />
     <br />
-
-    <asp:Panel ID="resultholder" CssClass="container" runat="server">
-    </asp:Panel>
 
 </asp:Content>

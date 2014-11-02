@@ -67,12 +67,12 @@ namespace MiniProject {
         protected global::System.Web.UI.WebControls.Button searchbtn;
         
         /// <summary>
-        /// resultholder control.
+        /// resultGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel resultholder;
+        protected global::System.Web.UI.WebControls.GridView resultGrid;
     }
 }
