@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace MiniProject
@@ -17,59 +18,79 @@ namespace MiniProject
         string conString = WebConfigurationManager.ConnectionStrings["Db"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            HttpCookie cookie = Response.Cookies["userData"];
 
+            if (cookie != null)
+            {
+                userTextBox.Text = cookie["Email"];
+                passTextBox.Text = cookie["Pass"];
+            }
         }
 
         protected void LoginBtn_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(conString);
-            string query = "SELECT * FROM Users WHERE Email=@Email AND Password=@Password";
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@Email", userTextBox.Text);
-            cmd.Parameters.AddWithValue("@Password", passTextBox.Text);
-            con.Open();
-            SqlDataReader reader = cmd.ExecuteReader();
 
-            int rows;
-
-            using (DataTable dt = new DataTable())
+            try
             {
-                dt.Load(reader);
-                rows = dt.Rows.Count;
-            }
+                SqlConnection con = new SqlConnection(conString);
+                string query = "SELECT * FROM Users WHERE Email=@Email AND Password=@Password";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@Email", userTextBox.Text);
+                cmd.Parameters.AddWithValue("@Password", passTextBox.Text);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
 
-            if (rows == 1)
-            {
+                int rows;
 
-                //Store cookie if checked
-                if (rememeberCheckBox.Checked)
+                using (DataTable dt = new DataTable())
                 {
-                    HttpCookie cookie = Response.Cookies["userData"];
-
-                    if (cookie == null)
-                    {
-                        cookie = new HttpCookie("userData");
-                        cookie["Email"] = userTextBox.Text;
-                        cookie["Pass"] = passTextBox.Text;
-
-                        Response.Cookies.Add(cookie);
-                    }
+                    dt.Load(reader);
+                    rows = dt.Rows.Count;
                 }
 
-                Server.Transfer("MainPage.aspx");
+                if (rows == 1)
+                {
+
+                    //Store cookie if checked
+                    if (rememeberCheckBox.Checked)
+                    {
+                        HttpCookie cookie = Response.Cookies["userData"];
+
+                        if (cookie == null)
+                        {
+                            cookie = new HttpCookie("userData");
+                            cookie.Expires = DateTime.Now.AddHours(1);
+                            cookie["Email"] = userTextBox.Text;
+                            cookie["Pass"] = passTextBox.Text;
+
+                            Response.Cookies.Add(cookie);
+                        }
+                    }
+
+                    Server.Transfer("MainPage.aspx");
+                }
+                else
+                {
+                    LoginAlert.Visible = true;
+
+                    Label text = FindControl("alertText") as Label;
+                    text.Text = "Could not find User!";
+
+                }
+
+                con.Close();
             }
-            else
+            catch (Exception ex)
             {
                 LoginAlert.Visible = true;
+                alertText.Text = "Could not open DB connection!";
             }
-
-            con.Close();
 
         }
 
         protected void RegisterBtn_Click(object sender, EventArgs e)
         {
-
+            Server.Transfer("RegisterPage.aspx");
         }
     }
 }

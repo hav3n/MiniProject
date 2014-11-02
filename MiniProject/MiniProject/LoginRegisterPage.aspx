@@ -42,13 +42,15 @@
                     </label>
                 </div>
                 <asp:Button CssClass="btn btn-default" ID="LoginBtn" runat="server" Text="Login" OnClick="LoginBtn_Click" />
-                <asp:Button CssClass="btn btn-default" ID="RegisterBtn" runat="server" Text="Register" OnClick="RegisterBtn_Click" />
+                <asp:Button CssClass="btn btn-default" ID="RegisterBtn" runat="server" Text="Register" OnClick="RegisterBtn_Click" CausesValidation="false" />
             </div>
         </div>
     </form>
     <br />
-    <div class="container">
-        <asp:Label ID="LoginAlert" Visible="false" runat="server" CssClass="alert alert-danger col-lg-12 text-center" Text="Username not found!">        
-        </asp:Label>
+    <div id="alertContainer" runat="server" class="container">
+        <div id="LoginAlert" visible="false" class="alert alert-danger alert-dismissible" role="alert" runat="server">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <asp:Label ID="alertText" runat="server" Font-Bold="true"></asp:Label>
+        </div>
     </div>
 </asp:Content>

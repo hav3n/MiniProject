@@ -85,12 +85,30 @@ namespace MiniProject {
         protected global::System.Web.UI.WebControls.Button RegisterBtn;
         
         /// <summary>
+        /// alertContainer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertContainer;
+        
+        /// <summary>
         /// LoginAlert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LoginAlert;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LoginAlert;
+        
+        /// <summary>
+        /// alertText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label alertText;
     }
 }
