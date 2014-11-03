@@ -30,11 +30,11 @@
             </div>
         </div>
         <br />
-        <asp:GridView ID="resultGrid" CssClass="table" runat="server" AutoGenerateColumns="false">
+        <asp:GridView ID="resultGrid" CssClass="table table-hover table-striped" GridLines="None" runat="server" AutoGenerateColumns="false">
             <Columns>
                 <asp:TemplateField HeaderText="Image">
                     <ItemTemplate>
-                        <img src="<%# Eval("image") %>" class="img-thumbnail img-responsive center-block" alt="Image" style="min-height: 140px; height: auto; min-width: 140px; width: 140px" />
+                        <asp:Image runat="server" ID="productImage" CssClass="img-thumbnail img-responsive center-block" AlternateText="Product Image" ImageUrl='<%# Eval("image") %>' Width="140px" />
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField HeaderText="Stock" DataField="stock" />

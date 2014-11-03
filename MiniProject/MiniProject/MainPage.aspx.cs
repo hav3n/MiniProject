@@ -122,6 +122,12 @@ namespace MiniProject
             resultGrid.DataSource = table;
             resultGrid.DataBind();
 
+            if (table != null && table.Rows.Count > 0)
+            {
+                resultGrid.UseAccessibleHeader = true;
+                resultGrid.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+
             resultGrid.Visible = true;
 
         }
