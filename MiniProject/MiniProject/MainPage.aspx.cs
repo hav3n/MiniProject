@@ -88,12 +88,18 @@ namespace MiniProject
                 catedropDown.DataSource = categories;
                 catedropDown.DataBind();
             }
-            if (Session["Name"] == null)
+            HttpCookie cookie = Request.Cookies["userData"];
+            if (cookie["Name"] == null && Session["Name"] == null)
             {
                 Response.Redirect("LoginRegisterPage.aspx");
             }
+            
 
-            alertText.Text = "Welcome, " + Session["Name"] + "!";
+
+            if (cookie["Name"] != null)
+                alertText.Text = "Welcome, " + cookie["Name"] + "!";
+            else
+                alertText.Text = "Welcome, " + Session["Name"] + "!";
         }
 
         protected void searchbtn_Click(object sender, EventArgs e)
