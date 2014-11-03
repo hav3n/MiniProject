@@ -40,7 +40,7 @@
         <br />
         <asp:GridView ID="resultGrid" CssClass="table table-hover table-striped" GridLines="None" runat="server" AutoGenerateColumns="false">
             <Columns>
-                <asp:TemplateField HeaderText="Image">
+                <asp:TemplateField HeaderText="Image" HeaderStyle-CssClass="text-center">
                     <ItemTemplate>
                         <asp:Image runat="server" ID="productImage" CssClass="img-thumbnail img-responsive center-block" AlternateText="Product Image" ImageUrl='<%# Eval("image") %>' Width="140px" />
                     </ItemTemplate>
