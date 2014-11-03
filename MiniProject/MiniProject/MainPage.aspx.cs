@@ -92,16 +92,15 @@ namespace MiniProject
             {
                 Response.Redirect("LoginRegisterPage.aspx");
             }
-            else
-            {
-                // Response.Write("logged in " + Session["UserID"]);
-            }
 
             alertText.Text = "Welcome, " + Session["Name"] + "!";
         }
 
         protected void searchbtn_Click(object sender, EventArgs e)
         {
+
+            searchAlert.Visible = false;
+
             WebClient webClient = new WebClient();
             string json = webClient.DownloadString("http://api.pricecheckindia.com/feed/product/" + catedropDown.SelectedValue.ToString() + "/" +
                  HttpUtility.UrlEncode(SearchText.Text) + ".json?user=ankitank&key=JTVATIQJUCZKUKQO");
@@ -126,6 +125,11 @@ namespace MiniProject
             {
                 resultGrid.UseAccessibleHeader = true;
                 resultGrid.HeaderRow.TableSection = TableRowSection.TableHeader;
+            }
+            else
+            {
+                searchAlert.Visible = true;
+                searchAlert.Text = "No products found!";
             }
 
             resultGrid.Visible = true;

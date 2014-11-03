@@ -29,6 +29,10 @@
                 </div>
             </div>
         </div>
+
+        <br />
+        <asp:Label ID="searchAlert" runat="server" CssClass="alert alert-danger alert-dismissible col-md-6 col-md-offset-3 container" Visible="false" Font-Bold="true" />
+
         <br />
         <asp:GridView ID="resultGrid" CssClass="table table-hover table-striped" GridLines="None" runat="server" AutoGenerateColumns="false">
             <Columns>
