@@ -31,6 +31,10 @@
         </div>
 
         <br />
+         <div id="modeldiv" visible="false" class=" alert alert-success alert-dismissible col-md-6 col-md-offset-3 container" role="alert" runat="server">
+        <asp:Label ID="ModelLabel" runat="server" Font-Bold="true"></asp:Label>
+    </div>
+        <br />
         <asp:Label ID="searchAlert" runat="server" CssClass="alert alert-danger alert-dismissible col-md-6 col-md-offset-3 container" Visible="false" Font-Bold="true" />
 
         <br />

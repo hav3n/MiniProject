@@ -114,16 +114,20 @@ namespace MiniProject
             json = JObject.Parse(json).SelectToken("product").ToString();
 
 
-
+            string model = "", brand = "";
             JArray arr = JArray.Parse(json);
             foreach (JObject o in arr.Children<JObject>())
             {
                 json = o.SelectToken("stores").ToString();
+                model = o.SelectToken("model").ToString();
+                brand = o.SelectToken("brand").ToString();
             }
 
+           
+
             var table = JsonConvert.DeserializeObject<DataTable>(json);
-
-
+            
+            
             resultGrid.DataSource = table;
             resultGrid.DataBind();
 
@@ -131,6 +135,8 @@ namespace MiniProject
             {
                 resultGrid.UseAccessibleHeader = true;
                 resultGrid.HeaderRow.TableSection = TableRowSection.TableHeader;
+                modeldiv.Visible = true;
+                ModelLabel.Text = "Model: " + brand + " " + model;
             }
             else
             {
