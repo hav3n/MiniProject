@@ -55,18 +55,22 @@ namespace MiniProject
                     //Store cookie if checked
                     if (rememeberCheckBox.Checked)
                     {
-                        HttpCookie cookie = Response.Cookies["userData"];
+                        HttpCookie cookie = new HttpCookie("userData");
 
-                        if (cookie == null)
-                        {
+                       
                             cookie = new HttpCookie("userData");
                             cookie.Expires = DateTime.Now.AddHours(1);
+                            reader.Close();
+                            reader = cmd.ExecuteReader();
+                            reader.Read();
+                            cookie["Name"] = reader["Name"].ToString();
                             cookie["Email"] = userTextBox.Text;
                             cookie["Pass"] = passTextBox.Text;
 
                             Response.Cookies.Add(cookie);
-                        }
+                        
                     }
+                    reader.Close();
                     reader = cmd.ExecuteReader();
                     reader.Read();
                     Session["Name"] = reader["Name"];

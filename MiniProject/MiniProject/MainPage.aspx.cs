@@ -88,7 +88,8 @@ namespace MiniProject
                 catedropDown.DataSource = categories;
                 catedropDown.DataBind();
             }
-            if (Session["Name"] == null)
+            HttpCookie cookie = Request.Cookies["userData"];
+            if (cookie["Name"] == null && Session["Name"] == null)
             {
                 Response.Redirect("LoginRegisterPage.aspx");
             }
@@ -96,7 +97,9 @@ namespace MiniProject
             {
                 // Response.Write("logged in " + Session["UserID"]);
             }
-
+            if (cookie["Name"] != null)
+                alertText.Text = "Welcome, " + cookie["Name"] + "!";
+            else
             alertText.Text = "Welcome, " + Session["Name"] + "!";
         }
 
